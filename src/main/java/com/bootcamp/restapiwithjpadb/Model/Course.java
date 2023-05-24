@@ -1,10 +1,17 @@
-package com.bootcamp.restapiwithjpadb;
-import jakarta.persistence.*;
+package com.bootcamp.restapiwithjpadb.Model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 @Entity
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String name;
 
     public Long getId() {
         return id;
@@ -21,8 +28,6 @@ public class Course {
     public void setName(String name) {
         this.name = name;
     }
-
-    private String name;
 
     // Constructor, getters, and setters
 }

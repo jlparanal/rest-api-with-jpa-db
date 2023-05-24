@@ -1,5 +1,11 @@
-package com.bootcamp.restapiwithjpadb;
-import jakarta.persistence.*;
+package com.bootcamp.restapiwithjpadb.Model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
 @Entity
 public class Student {
     @Id
@@ -11,6 +17,9 @@ public class Student {
     private String lastName;
 
     private String email;
+
+    @ManyToOne
+    private Course course;
 
     public Long getId() {
         return id;
@@ -51,9 +60,6 @@ public class Student {
     public void setCourse(Course course) {
         this.course = course;
     }
-
-    @ManyToOne
-    private Course course;
 
     // Constructor, getters, and setters
 }
